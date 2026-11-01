@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mamma Mia Pizza - Especialistas en pizza artesanal de masa madre. Pedidos inmediatos para entrega a domicilio y recogida en local en Colombia." />
+    <title>Mamma Mia Pizza | Pizzas Artesanales a Domicilio y Recogida</title>
+
+    <!-- Hojas de estilo desacopladas -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Script principal modular deferido -->
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <!-- Enlace de salto accesible para navegación por teclado -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Cabecera Fija -->
+    <header class="site-header" id="top">
+      <div class="header-container">
+        <a href="#home" class="logo" aria-label="Mamma Mia Pizza - Inicio">
+          <span class="logo-accent">Mamma Mia</span> Pizza
+        </a>
+
+        <!-- Botón Menú Hamburguesa para Móviles -->
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Abrir menú de navegación">
+          <span class="hamburger-bar" aria-hidden="true"></span>
+          <span class="hamburger-bar" aria-hidden="true"></span>
+          <span class="hamburger-bar" aria-hidden="true"></span>
+        </button>
+
+        <!-- Navegación Principal -->
+        <nav
+          class="primary-nav"
+          id="primary-nav"
+          aria-label="Navegación principal">
+          <ul class="nav-list">
+            <li><a href="#home" class="nav-link">Inicio</a></li>
+            <li><a href="#about" class="nav-link">Nosotros</a></li>
+            <li><a href="#products" class="nav-link">Especialidades</a></li>
+            <li><a href="#contact" class="nav-link">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Contenido Central -->
+    <main id="main-content">
+      <!-- SECCIÓN 1: HOME (Hero Banner Exterior) -->
+      <section id="home" class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <span class="hero-tag">Masa madre & horno de piedra</span>
+          <h1 id="hero-title">Pizzas de autor al corte y por volumen</h1>
+          <p class="hero-subtitle">
+            Elaboración artesanal con fermentación lenta de 48 horas. Venta al
+            detalle y por mayor para eventos o reuniones. Servicio exclusivo de
+            entrega a domicilio y recogida en local.
+          </p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary">Ver Menú y Precios</a>
+            <a href="tel:+573001234567" class="btn btn-secondary"
+              >Llamada Rápida</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 2: ABOUT (Información, Horarios y Modalidades) -->
+      <section id="about" class="about-section" aria-labelledby="about-title">
+        <div class="section-container">
+          <header class="section-header">
+            <span class="section-badge">Operación y Cobertura</span>
+            <h2 id="about-title">
+              Horno Artesanal: Solo Delivery y Recogida en Puerta
+            </h2>
+            <p class="section-desc">
+              Nos enfocamos 100% en la rapidez y la temperatura de salida. No
+              contamos con servicio de mesas ni gestión de reservas físicas en
+              local.
+            </p>
+          </header>
+
+          <div class="about-grid">
+            <article class="about-card">
+              <div class="about-icon" aria-hidden="true">📍</div>
+              <h3>Punto de Despacho</h3>
+              <p>
+                Sede central de horneado en Calle 45 # 28-14. Recoge tu pedido
+                recién salido del horno en ventanilla rápida.
+              </p>
+            </article>
+
+            <article class="about-card">
+              <div class="about-icon" aria-hidden="true">⏱️</div>
+              <h3>Horarios Continuos</h3>
+              <p>
+                Martes a Domingo de 12:00 m. a 11:00 p.m. Domingos y festivos
+                con despacho ininterrumpido hasta agotar existencias.
+              </p>
+            </article>
+
+            <article class="about-card">
+              <div class="about-icon" aria-hidden="true">🛵</div>
+              <h3>Zonas de Entrega</h3>
+              <p>
+                Cobertura express en radio de 8 km. Pedidos empacados en cajas
+                térmicas selladas para conservar temperatura y crocancia.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 3: PRODUCTS (Catálogo con Selector de Tamaños en COP) -->
+      <section
+        id="products"
+        class="products-section"
+        aria-labelledby="products-title">
+        <div class="section-container">
+          <header class="section-header">
+            <span class="section-badge">Nuestras 4 Especialidades</span>
+            <h2 id="products-title">Catálogo Oficial de Pizzas</h2>
+            <p class="section-desc">
+              Selecciona tu tamaño ideal y genera una orden directa ítem por
+              ítem en pesos colombianos (COP).
+            </p>
+          </header>
+
+          <!-- Barra de Filtros y Ordenamiento -->
+          <div class="catalog-toolbar">
+            <label for="sort-selector" class="toolbar-label"
+              >Ordenar catálogo por:</label
+            >
+            <select
+              id="sort-selector"
+              class="sort-select"
+              aria-label="Ordenar pizzas">
+              <option value="popularity">Popularidad y Recomendadas</option>
+              <option value="price-desc">Precio: de Mayor a Menor</option>
+              <option value="price-asc">Precio: de Menor a Mayor</option>
+              <option value="availability">Disponibilidad Inmediata</option>
+            </select>
+          </div>
+
+          <!-- Cuadrícula de Tarjetas de Producto -->
+          <div class="products-grid" id="products-grid">
+            <!-- Tarjeta 1: Pizza Napolitana (Mejor Review) -->
+            <article
+              class="pizza-card"
+              data-id="napolitana"
+              data-name="Pizza Napolitana"
+              data-popularity="100"
+              data-available="true"
+              data-price-personal="26000"
+              data-price-mediana="42000"
+              data-price-familiar="62000"
+              data-current-price="42000">
+              <figure class="card-media">
+                <span class="badge badge-featured"
+                  >★ MEJOR REVIEW / MÁS PEDIDA</span
+                >
+                <img
+                  src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&auto=format&fit=crop&q=80"
+                  alt="Pizza Napolitana artesanal con albahaca y mozzarella derretida"
+                  loading="lazy"
+                  width="800"
+                  height="450" />
+              </figure>
+              <div class="card-body">
+                <div class="card-title-row">
+                  <span class="card-icon" aria-hidden="true">🍕</span>
+                  <h3 class="card-title">Pizza Napolitana</h3>
+                </div>
+                <p class="card-description">
+                  Salsa pomodoro San Marzano de la casa, mozzarella fresca
+                  hilada, albahaca fresca del huerto y toque de aceite de oliva
+                  extra virgen.
+                </p>
+
+                <!-- Selector de Tamaño Accesible -->
+                <fieldset class="size-selector">
+                  <legend class="sr-only">
+                    Selecciona el tamaño para Pizza Napolitana
+                  </legend>
+                  <div class="size-options">
+                    <label class="size-label">
+                      <input
+                        type="radio"
+                        name="size-napolitana"
+                        value="personal"
+                        data-price="26000" />
+                      <span>Personal (25cm)</span>
+                    </label>
+                    <label class="size-label">
+                      <input
+                        type="radio"
+                        name="size-napolitana"
+                        value="mediana"
+                        data-price="42000"
+                        checked />
+                      <span>Mediana (35cm)</span>
+                    </label>
+                    <label class="size-label">
+                      <input
+                        type="radio"
+                        name="size-napolitana"
+                        value="familiar"
+                        data-price="62000" />
+                      <span>Familiar (45cm)</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="card-footer">
+                  <div class="price-display" aria-live="polite">
+                    <span class="price-label">Precio:</span>
+                    <span class="price-amount">$ 42.000 COP</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-order"
+                    data-pizza="napolitana">
+                    Pedir Ítem
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tarjeta 2: Pizza de Carne -->
+            <article
+              class="pizza-card"
+              data-id="carne"
+              data-name="Pizza de Carne"
+              data-popularity="90"
+              data-available="true"
+              data-price-personal="28000"
+              data-price-mediana="46000"
+              data-price-familiar="68000"
+              data-current-price="46000">
+              <figure class="card-media">
+                <span class="badge badge-status">DISPONIBLE</span>
+                <img
+                  src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800&auto=format&fit=crop&q=80"
+                  alt="Pizza de carne con pepperoni madurado y queso fundido"
+                  loading="lazy"
+                  width="800"
+                  height="450" />
+              </figure>
+              <div class="card-body">
+                <div class="card-title-row">
+                  <span class="card-icon" aria-hidden="true">🥩</span>
+                  <h3 class="card-title">Pizza de Carne</h3>
+                </div>
+                <p class="card-description">
+                  Mezcla de res madurada marinada, pepperoni rústico curado,
+                  tocineta ahumada al manzano y reducción artesanal de especias.
+                </p>
+
+                <fieldset class="size-selector">
+                  <legend class="sr-only">
+                    Selecciona el tamaño para Pizza de Carne
+                  </legend>
+                  <div class="size-options">
+                    <label class="size-label">
+                      <input
+                        type="radio"
+                        name="size-carne"
+                        value="personal"
+                        data-price="28000" />
+                      <span>Personal (25cm)</span>
+                    </label>
+                    <label class="size-label">
+                      <input
+                        type="radio"
+                        name="size-carne"
+                        value="mediana"
+                        data-price="46000"
+                        checked />
+                      <span>Mediana (35cm)</span>
+                    </label>
+                    <label class="size-label">
+                      <input
+                        type="radio"
+                        name="size-carne"
+                        value="familiar"
+                        data-price="68000" />
+                      <span>Familiar (45cm)</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="card-footer">
+                  <div class="price-display" aria-live="polite">
+                    <span class="price-label">Precio:</span>
+                    <span class="price-amount">$ 46.000 COP</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-order"
+                    data-pizza="carne">
+                    Pedir Ítem
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tarjeta 3: Pizza de Pollo -->
+            <article
+              class="pizza-card"
+              data-id="pollo"
+              data-name="Pizza de Pollo"
+              data-popularity="85"
+              data-available="true"
+              data-price-personal="25000"
+              data-price-mediana="40000"
+              data-price-familiar="59000"
+              data-current-price="40000">
+              <figure class="card-media">
+                <span class="badge badge-status">DISPONIBLE</span>
+                <img
+                  src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&auto=format&fit=crop&q=80"
+                  alt="Pizza de pollo desmechado con champiñones frescos salteados"
+                  loading="lazy"
+                  width="800"
+                  height="450" />
+              </figure>
+              <div class="card-body">
+                <div class="card-title-row">
+                  <span class="card-icon" aria-hidden="true">🍗</span>
+                  <h3 class="card-title">Pizza de Pollo</h3>
+                </div>
+                <p class="card-description">
+                  Pechuga desmechada sazonada en finas hierbas mediterráneas,
+                  champiñones portobello salteados y crema suave de queso gouda.
+                </p>
+
+                <fieldset class="size-selector">
+                  <legend class="sr-only">
+                    Selecciona el tamaño para Pizza de Pollo
+                  </legend>
+                  <div class="size-options">
+                    <label class="size-label">
+                      <input
+                        type="radio"
+                        name="size-pollo"
+                        value="personal"
+                        data-price="25000" />
+                      <span>Personal (25cm)</span>
+                    </label>
+                    <label class="size-label">
+                      <input
+                        type="radio"
+                        name="size-pollo"
+                        value="mediana"
+                        data-price="40000"
+                        checked />
+                      <span>Mediana (35cm)</span>
+                    </label>
+                    <label class="size-label">
+                      <input
+                        type="radio"
+                        name="size-pollo"
+                        value="familiar"
+                        data-price="59000" />
+                      <span>Familiar (45cm)</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="card-footer">
+                  <div class="price-display" aria-live="polite">
+                    <span class="price-label">Precio:</span>
+                    <span class="price-amount">$ 40.000 COP</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-order"
+                    data-pizza="pollo">
+                    Pedir Ítem
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tarjeta 4: Pizza Vegetariana -->
+            <article
+              class="pizza-card"
+              data-id="vegetariana"
+              data-name="Pizza Vegetariana"
+              data-popularity="80"
+              data-available="true"
+              data-price-personal="24000"
+              data-price-mediana="39000"
+              data-price-familiar="56000"
+              data-current-price="39000">
+              <figure class="card-media">
+                <span class="badge badge-green">OPCIÓN GREEN</span>
+                <img
+                  src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=800&auto=format&fit=crop&q=80"
+                  alt="Pizza vegetariana cargada de pimientos, aceitunas y rúgula"
+                  loading="lazy"
+                  width="800"
+                  height="450" />
+              </figure>
+              <div class="card-body">
+                <div class="card-title-row">
+                  <span class="card-icon" aria-hidden="true">🌱</span>
+                  <h3 class="card-title">Pizza Vegetariana</h3>
+                </div>
+                <p class="card-description">
+                  Pimientos asados al fuego vivo, rodajas de calabacín tierno,
+                  aceitunas kalamata, cebolla morada crujiente y hojas de rúgula
+                  fresca.
+                </p>
+
+                <fieldset class="size-selector">
+                  <legend class="sr-only">
+                    Selecciona el tamaño para Pizza Vegetariana
+                  </legend>
+                  <div class="size-options">
+                    <label class="size-label">
+                      <input
+                        type="radio"
+                        name="size-vegetariana"
+                        value="personal"
+                        data-price="24000" />
+                      <span>Personal (25cm)</span>
+                    </label>
+                    <label class="size-label">
+                      <input
+                        type="radio"
+                        name="size-vegetariana"
+                        value="mediana"
+                        data-price="39000"
+                        checked />
+                      <span>Mediana (35cm)</span>
+                    </label>
+                    <label class="size-label">
+                      <input
+                        type="radio"
+                        name="size-vegetariana"
+                        value="familiar"
+                        data-price="56000" />
+                      <span>Familiar (45cm)</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="card-footer">
+                  <div class="price-display" aria-live="polite">
+                    <span class="price-label">Precio:</span>
+                    <span class="price-amount">$ 39.000 COP</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-order"
+                    data-pizza="vegetariana">
+                    Pedir Ítem
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 4: CONTACT & FEEDBACK (Atención y Formulario) -->
+      <section
+        id="contact"
+        class="contact-section"
+        aria-labelledby="contact-title">
+        <div class="section-container">
+          <header class="section-header">
+            <span class="section-badge">Canales Directos</span>
+            <h2 id="contact-title">Atención al Cliente y Opiniones</h2>
+            <p class="section-desc">
+              ¿Tienes preguntas sobre un pedido al por mayor o deseas darnos tu
+              retroalimentación?
+            </p>
+          </header>
+
+          <div class="contact-layout">
+            <!-- Columna Información Directa -->
+            <div class="contact-info">
+              <h3>Líneas de Atención</h3>
+              <p>
+                Contáctanos directamente para despachos inmediatos o
+                cotizaciones corporativas:
+              </p>
+              <ul class="contact-list">
+                <li>
+                  <span class="contact-type" aria-hidden="true">📞</span>
+                  <div>
+                    <strong>Teléfono Directo:</strong>
+                    <a href="tel:+573001234567">+57 (300) 123-4567</a>
+                  </div>
+                </li>
+                <li>
+                  <span class="contact-type" aria-hidden="true">💬</span>
+                  <div>
+                    <strong>Canal de WhatsApp:</strong>
+                    <a
+                      href="https://wa.me/573001234567"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >+57 (300) 123-4567</a
+                    >
+                  </div>
+                </li>
+                <li>
+                  <span class="contact-type" aria-hidden="true">📷</span>
+                  <div>
+                    <strong>Instagram Oficial:</strong>
+                    <a
+                      href="https://instagram.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >@mammamiapizza_co</a
+                    >
+                  </div>
+                </li>
+              </ul>
+              <div class="service-notice">
+                <strong>Nota de Servicio:</strong> Los despachos se procesan en
+                estricto orden de solicitud. Tiempo estimado promedio: 30 a 45
+                minutos.
+              </div>
+            </div>
+
+            <!-- Columna Formulario de Feedback -->
+            <div class="contact-form-container">
+              <h3>Formulario de Calificación y Feedback</h3>
+              <form id="feedback-form" class="feedback-form" novalidate>
+                <div class="form-group">
+                  <label for="feedback-name"
+                    >Nombre completo
+                    <span class="required" aria-hidden="true">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="feedback-name"
+                    name="name"
+                    required
+                    placeholder="Ej. Carlos Mendoza"
+                    autocomplete="name" />
+                  <span
+                    class="form-error"
+                    id="name-error"
+                    aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="feedback-contact"
+                    >Correo electrónico o Teléfono
+                    <span class="required" aria-hidden="true">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="feedback-contact"
+                    name="contact"
+                    required
+                    placeholder="Ej. carlos@correo.com o 310..."
+                    autocomplete="email" />
+                  <span
+                    class="form-error"
+                    id="contact-error"
+                    aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="feedback-type">Tipo de cliente</label>
+                  <select id="feedback-type" name="client_type">
+                    <option value="individual">
+                      Cliente por Detalle (Consumo Personal/Familiar)
+                    </option>
+                    <option value="wholesale">
+                      Cliente al por Mayor / Corporativo
+                    </option>
+                    <option value="first_time">Primera Vez Pidiendo</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="feedback-message"
+                    >Tu opinión o consulta
+                    <span class="required" aria-hidden="true">*</span></label
+                  >
+                  <textarea
+                    id="feedback-message"
+                    name="message"
+                    rows="4"
+                    required
+                    placeholder="Cuéntanos cómo fue tu experiencia o qué producto te gustaría sugerir..."></textarea>
+                  <span
+                    class="form-error"
+                    id="message-error"
+                    aria-live="polite"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit">
+                  Enviar Comentarios
+                </button>
+                <div
+                  class="form-status"
+                  id="feedback-status"
+                  role="status"
+                  aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal Accesible Nativo para Pedido Ítem por Ítem -->
+    <dialog
+      id="order-modal"
+      class="modal-dialog"
+      aria-labelledby="modal-pizza-title"
+      aria-modal="true">
+      <div class="modal-wrapper">
+        <header class="modal-header">
+          <div>
+            <span class="modal-subtitle"
+              >Confirmación de Despacho Inmediato</span
+            >
+            <h2 id="modal-pizza-title" class="modal-title">
+              Pizza Seleccionada
+            </h2>
+          </div>
+          <button
+            type="button"
+            class="modal-close"
+            id="modal-close-btn"
+            aria-label="Cerrar ventana de pedido">
+            &times;
+          </button>
+        </header>
+
+        <div class="modal-summary">
+          <p>
+            <strong>Tamaño:</strong> <span id="modal-size-text">Mediana</span>
+          </p>
+          <p>
+            <strong>Total estimado:</strong>
+            <span id="modal-price-text" class="modal-price-highlight"
+              >$ 0 COP</span
+            >
+          </p>
+        </div>
+
+        <!-- Opciones Rápidas: Despacho a Domicilio o Llamada -->
+        <form id="order-form" class="modal-form" novalidate>
+          <div class="form-group">
+            <label for="order-address"
+              >Dirección completa de entrega o punto de recogida
+              <span class="required" aria-hidden="true">*</span></label
+            >
+            <input
+              type="text"
+              id="order-address"
+              name="address"
+              required
+              placeholder="Ej. Cra 15 # 85-30 Apto 402" />
+            <span
+              class="form-error"
+              id="address-error"
+              aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="order-phone"
+              >Número de contacto para coordinar entrega
+              <span class="required" aria-hidden="true">*</span></label
+            >
+            <input
+              type="tel"
+              id="order-phone"
+              name="phone"
+              required
+              placeholder="Ej. 3001234567" />
+            <span class="form-error" id="phone-error" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="order-payment">Método de pago al recibir</label>
+            <select id="order-payment" name="payment">
+              <option value="cash">Efectivo contra entrega</option>
+              <option value="nequi">Transferencia Nequi / Daviplata</option>
+              <option value="card">Datáfono (Tarjeta Débito/Crédito)</option>
+            </select>
+          </div>
+
+          <div class="modal-actions">
+            <button type="submit" class="btn btn-primary btn-block">
+              Confirmar Pedido a Domicilio
+            </button>
+            <a href="tel:+573001234567" class="btn btn-secondary btn-block"
+              >Pedir por Llamada Directa</a
+            >
+          </div>
+          <div
+            class="modal-status"
+            id="order-status"
+            role="status"
+            aria-live="polite"></div>
+        </form>
+      </div>
+    </dialog>
+
+    <!-- Pie de Página Semántico -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <span class="footer-logo">Mamma Mia Pizza</span>
+          <p>
+            Masa madre, ingredientes seleccionados y entrega express. Horneando
+            tradición desde 2024.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Modalidades</h4>
+          <ul>
+            <li>Entrega a domicilio (Delivery)</li>
+            <li>Recogida en local (Takeout)</li>
+            <li>Atención especial mayorista</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Horario de Atención</h4>
+          <p>
+            Martes a Domingo: 12:00 m. – 11:00 p.m.<br />Lunes: Cerrado por
+            mantenimiento de hornos.
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Mamma Mia Pizza. Todos los derechos reservados. Precios en
+          pesos colombianos (COP).
+        </p>
+        <a href="#top" class="back-to-top" aria-label="Volver arriba"
+          >↑ Volver al inicio</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>
