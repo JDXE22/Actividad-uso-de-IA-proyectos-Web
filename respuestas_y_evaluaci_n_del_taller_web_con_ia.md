@@ -188,7 +188,7 @@ Se produciría un fenómeno de **desalineación contextual (_context drift_) y a
 
 ### CSS y Responsividad
 
-- [x] **El sitio se visualiza correctamente a 360 px:** Columna única con márgenes de seguridad.
+- [x] **El sitio se visualiza correctamente a 480 px:** Columna única con márgenes de seguridad.
 - [x] **El sitio se visualiza correctamente a 768 px:** Distribución en rejilla de 2 columnas balanceada.
 - [x] **El sitio se visualiza correctamente a 1200 px o más:** Cuadrícula de 4 columnas centrada con `max-width: 1200px`.
 - [x] **No hay desbordamientos horizontales inesperados:** Contención mediante `box-sizing: border-box` y `max-width: 100%`.

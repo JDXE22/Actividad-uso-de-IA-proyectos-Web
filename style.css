@@ -901,8 +901,8 @@ a {
 /* ==========================================================================
    11. MEDIA QUERIES (ESTRATEGIA RESPONSIVE MOBILE-FIRST)
    ========================================================================== */
-/* Tablet (desde 640px) */
-@media (min-width: 640px) {
+/* Tablet (desde 768px) */
+@media (min-width: 768px) {
   .hero-actions {
     flex-direction: row;
   }
