@@ -126,13 +126,13 @@ Se produciría un fenómeno de **desalineación contextual (_context drift_) y a
 | **Iteración 2** | Identidad Visual               | Declaración de variables CSS en `:root`.              | Paleta análoga en morados y azules oscuros con interlineado global de `1.5rem`.                  |
 | **Iteración 3** | Proporciones y Layout          | Control de desbordamientos y dimensiones de imágenes. | Adición de `aspect-ratio: 16 / 9`, `object-fit: cover` y `loading="lazy"`.                       |
 | **Iteración 4** | Accesibilidad e Interactividad | Comportamiento del menú móvil, modal y filtros.       | Gestión de atributos `aria-expanded`, navegación por teclado y cálculo reactivo en `$ COP`.      |
-| **Iteración 5** | Diseño Responsive              | Adaptación a viewports de 360px, 640px y 1024px.      | Media queries Mobile-First garantizando áreas táctiles $\ge 48\text{px} \times 48\text{px}$.     |
+| **Iteración 5** | Diseño Responsive              | Adaptación a viewports de 480px, 640px y 1024px.      | Media queries Mobile-First garantizando áreas táctiles $\ge 48\text{px} \times 48\text{px}$.     |
 
 ---
 
 ### Caso de Corrección Localizada: CSS Grid de Productos
 
-- **Diagnóstico del problema:** Las tarjetas del catálogo se presentaban colapsadas y excesivamente delgadas en pantallas grandes (>1024px), mientras que en pantallas móviles estrechas (360px) generaban desbordamiento horizontal.
+- **Diagnóstico del problema:** Las tarjetas del catálogo se presentaban colapsadas y excesivamente delgadas en pantallas grandes (>1024px), mientras que en pantallas móviles estrechas (480px) generaban desbordamiento horizontal.
 - **Selector CSS modificado:** `.products-grid`
 - **Código de solución implementado:**
 
@@ -166,9 +166,9 @@ Se produciría un fenómeno de **desalineación contextual (_context drift_) y a
 ```
 
 - **Pruebas de verificación realizadas:**
-  1. _Emulación a 360px:_ Se comprobó que el contenedor se ajusta al ancho de pantalla sin generar scroll horizontal (`overflow-x: hidden`).
+  1. _Emulación a 480px:_ Se comprobó que el contenedor se ajusta al ancho de pantalla sin generar scroll horizontal (`overflow-x: hidden`).
   2. _Emulación a 768px:_ Las 4 pizzas se distribuyen en una cuadrícula simétrica de 2x2.
-  3. _Emulación a 1280px:_ Las 4 especialidades se disponen horizontalmente en una única fila uniforme.
+  3. _Emulación a 1024px:_ Las 4 especialidades se disponen horizontalmente en una única fila uniforme.
 
 ---
 
@@ -215,7 +215,7 @@ Al proporcionar un solo ejemplo (_One-shot_), la IA logra modelar con alta preci
 
 ### 3. ¿Qué información importante surgió al aplicar Meta-prompting?
 
-Surgió la necesidad de estructurar el requerimiento mediante **variables técnicas delimitadas**. En lugar de solicitar una descripción general, el meta-prompting reveló que debían fijarse los breakpoints exactos (360px, 640px, 1024px), las razones de contraste de color bajo la norma WCAG AA, la gestión de estados ARIA para lectores de pantalla y la proporción de aspecto de imágenes para evitar saltos de página (_CLS_).
+Surgió la necesidad de estructurar el requerimiento mediante **variables técnicas delimitadas**. En lugar de solicitar una descripción general, el meta-prompting reveló que debían fijarse los breakpoints exactos (480px, 640px, 1024px), las razones de contraste de color bajo la norma WCAG AA, la gestión de estados ARIA para lectores de pantalla y la proporción de aspecto de imágenes para evitar saltos de página (_CLS_).
 
 ### 4. ¿Qué cambios introdujiste gracias a la revisión humana que la IA no había considerado?
 
